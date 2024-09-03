@@ -1,0 +1,21 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: serverless-joannew
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  stage: prod
+  runtime: nodejs20.x
+  region: ap-southeast-1
+
+functions:
+  joannew:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+
+plugins:
+  - serverless-offline
