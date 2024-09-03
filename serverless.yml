@@ -15,6 +15,11 @@ functions:
       - httpApi:
           path: /
           method: get
+      - sqs:
+          arn: arn:aws:sqs:ap-southeast-1:255945442255:joannew-sqs
+          batchSize: 10
+          maximumBatchingWindow: 60
+          functionResponseType: ReportBatchItemFailures
 
 
 plugins:
